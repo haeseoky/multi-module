@@ -1,5 +1,6 @@
 dependencies{
     implementation(project(":domain"))
+    implementation(project(":infrastructure"))
 }
 val jar: Jar by tasks
 jar.enabled = true

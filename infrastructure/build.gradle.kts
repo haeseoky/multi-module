@@ -1,4 +1,5 @@
 dependencies{
+    implementation(project(":domain"))
     runtimeOnly("mysql:mysql-connector-java")
     testRuntimeOnly("com.h2database:h2")
 }
