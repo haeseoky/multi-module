@@ -1,0 +1,17 @@
+server:
+  port: 9001
+spring:
+  profiles:
+    include:
+      - infra
+  application:
+    name: multi-module-api
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+server:
+  port: 8001
