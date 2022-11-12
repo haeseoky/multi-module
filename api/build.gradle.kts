@@ -1,5 +1,7 @@
 val springCloudVersion: String by project
 val springCloudAWSVersion: String by project
+val springFoxVersion: String by project
+val sfnCoreVersion: String by project
 
 dependencyManagement {
     imports {
@@ -12,7 +14,12 @@ dependencies {
     implementation(project(":application"))
     implementation(project(":domain"))
     implementation(project(":infrastructure"))
+
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("io.springfox:springfox-boot-starter:${springFoxVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }

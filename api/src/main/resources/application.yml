@@ -1,6 +1,9 @@
-server:
-  port: 9001
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  main:
+    allow-bean-definition-overriding: true
   profiles:
     include:
       - infra
@@ -15,3 +18,21 @@ spring:
       on-profile: local
 server:
   port: 8001
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: stage
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod

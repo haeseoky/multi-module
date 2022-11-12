@@ -1,6 +1,6 @@
 package com.multimodule.application.receiving
 
-import com.multimodule.domain.entity.ReceivingTest
+import com.multimodule.domain.model.Receiving
 import com.multimodule.domain.repository.ReceivingRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional
 class ReceivingProvider(
     private val receivingRepository: ReceivingRepository,
 ) {
-    fun receiving(): List<ReceivingTest> {
+    fun receiving(): List<Receiving> {
         return receivingRepository.findAll()
     }
 }
