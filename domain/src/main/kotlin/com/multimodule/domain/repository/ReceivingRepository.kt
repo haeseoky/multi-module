@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface ReceivingRepository {
     fun findAll(): List<Receiving>
+    fun create(receiving: Receiving) : Receiving
 }

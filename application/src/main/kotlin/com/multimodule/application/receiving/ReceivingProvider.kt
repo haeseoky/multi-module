@@ -13,4 +13,9 @@ class ReceivingProvider(
     fun receiving(): List<Receiving> {
         return receivingRepository.findAll()
     }
+
+    fun create(receiving: Receiving): Receiving {
+        return receivingRepository.create(receiving)
+    }
+
 }

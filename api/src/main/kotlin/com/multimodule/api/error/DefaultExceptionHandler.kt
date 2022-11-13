@@ -23,7 +23,6 @@ import javax.validation.ConstraintViolationException
 class DefaultExceptionHandler {
     val errorCodePrefix = "MULTI-MODULE"
 
-
     @ExceptionHandler(value = [MissingServletRequestParameterException::class])
     @ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
     fun handleMissingServletRequestParameter(
