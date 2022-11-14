@@ -10,6 +10,14 @@ spring:
   application:
     name: multi-module-api
 
+logging:
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: ERROR
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: info
 
 ---
 spring:

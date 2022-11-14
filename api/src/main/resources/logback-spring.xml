@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <springProperty name="SERVICE_NAME" scan="context" source="spring.application.name"/>
+    <include resource="logback-constants.xml"/>
+
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="CONSOLE">
+        <encoder>
+            <pattern>
+                <![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level[%thread] %logger{35} [%method{24}:%line] - %msg%n]]>
+            </pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="prod">
+        <root level="error">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="stage">
+        <root level="info">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="dev,test,local">
+        <root level="debug">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+
+</configuration>

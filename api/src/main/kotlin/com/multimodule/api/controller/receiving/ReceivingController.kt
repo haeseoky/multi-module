@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/receiving")
 class ReceivingController(
     private val receivingProvider: ReceivingProvider,
 ) {
-    @GetMapping("/receiving")
+    @GetMapping("")
     fun list(): List<ReceivingResponse> {
         return receivingProvider.receiving().map {
             ReceivingResponse(
@@ -28,7 +28,7 @@ class ReceivingController(
         }
     }
 
-    @PostMapping("/receiving")
+    @PostMapping("")
     fun create(
         @Valid @RequestBody receivingRequest: ReceivingRequest
     ): CommonResponse<ReceivingResponse> {

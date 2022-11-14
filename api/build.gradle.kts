@@ -1,7 +1,6 @@
 val springCloudVersion: String by project
 val springCloudAWSVersion: String by project
 val springFoxVersion: String by project
-val sfnCoreVersion: String by project
 
 dependencyManagement {
     imports {

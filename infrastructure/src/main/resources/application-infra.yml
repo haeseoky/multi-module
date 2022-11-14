@@ -10,7 +10,9 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL57Dialect
     open-in-view: false
-
+sfn:
+  wms:
+    url: http://ss-wms-dev.ndev.sfn.local
 ---
 spring:
   config:
@@ -55,6 +57,7 @@ spring:
         connection:
           provider_disables_autocommit: false
         show_sql: true
+
 ---
 spring:
   config:

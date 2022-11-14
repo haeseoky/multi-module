@@ -1,4 +1,4 @@
-package com.multimodule.api.controller
+package com.multimodule.api.controller.receiving
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.multimodule.api.controller.base.AbstractSpringBootTest
@@ -26,7 +26,7 @@ internal class ReceivingControllerTest(
         val url = "http://localhost:$serverPort/api/receiving"
         val result = restTemplate.getForObject(url, Collection::class.java)
         println(result.forEach { println(it) })
-        Assertions.assertThat(result.size).isEqualTo(2)
+        Assertions.assertThat(result.size).isGreaterThan(0)
     }
 
     @Test

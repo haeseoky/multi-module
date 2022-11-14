@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<included>
+    <property name="SLACK_PROD_URI" value="https://hooks.slack.com/services/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"/>
+    <property name="SLACK_ANY_URI" value="https://hooks.slack.com/services/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"/>
+</included>

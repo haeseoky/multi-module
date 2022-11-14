@@ -1,0 +1,9 @@
+package com.multimodule.infrastructure.external.config
+
+import org.springframework.cloud.openfeign.EnableFeignClients
+import org.springframework.context.annotation.Configuration
+
+@Configuration
+@EnableFeignClients(basePackages = ["com.multimodule"])
+class FeignConfiguration {
+}
