@@ -13,5 +13,6 @@ internal class PartnerControllerTest(
         val result = restTemplate.getForObject(url, String::class.java)
 
         println(result)
+
     }
 }

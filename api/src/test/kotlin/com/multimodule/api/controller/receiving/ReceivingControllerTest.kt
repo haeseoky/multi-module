@@ -23,7 +23,7 @@ internal class ReceivingControllerTest(
             )
         )
 
-        val url = "http://localhost:$serverPort/api/receiving"
+        val url = "http://localhost:$serverPort/receiving"
         val result = restTemplate.getForObject(url, Collection::class.java)
         println(result.forEach { println(it) })
         Assertions.assertThat(result.size).isGreaterThan(0)
@@ -31,7 +31,7 @@ internal class ReceivingControllerTest(
 
     @Test
     fun create(){
-        val url = "http://localhost:$serverPort/api/receiving"
+        val url = "http://localhost:$serverPort/receiving"
         val receivingRequest = ReceivingRequest(
             name = "test",
             quantity = 1,
