@@ -1,4 +1,4 @@
-package com.multimodule.infrastructure.external.client
+package com.multimodule.infrastructure.externalapi.client
 
 import com.multimodule.domain.model.Partner
 import com.multimodule.domain.repository.PartnerRepository

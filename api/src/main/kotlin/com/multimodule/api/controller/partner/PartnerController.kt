@@ -2,7 +2,7 @@ package com.multimodule.api.controller.partner
 
 import com.multimodule.application.partner.PartnerProvider
 import com.multimodule.domain.model.Partner
-import com.multimodule.infrastructure.external.client.CommonResponse
+import com.multimodule.infrastructure.externalapi.client.CommonResponse
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
