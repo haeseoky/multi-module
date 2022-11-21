@@ -6,12 +6,11 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 @Service
-@Transactional(readOnly = true)
-class ReceivingProvider(
+@Transactional
+class ReceivingService(
     private val receivingRepository: ReceivingRepository,
 ) {
-    fun receiving(): List<Receiving> {
-        return receivingRepository.findAll()
+    fun create(receiving: Receiving): Receiving {
+        return receivingRepository.create(receiving)
     }
-
 }

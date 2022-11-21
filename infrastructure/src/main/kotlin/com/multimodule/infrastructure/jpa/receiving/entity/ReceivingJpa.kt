@@ -1,6 +1,7 @@
 package com.multimodule.infrastructure.jpa.receiving.entity
 
 import com.multimodule.infrastructure.jpa.common.BaseEntity
+import java.math.BigDecimal
 import javax.persistence.*
 
 @Entity
@@ -9,9 +10,12 @@ class ReceivingJpa(
     var name: String,
     @Column(name = "quantity")
     var quantity: Long,
-
+    @Column(name = "price")
+    var price: BigDecimal,
+    @Column(name = "currency")
+    var currency: String,
 ) : BaseEntity() {
-    constructor() : this("", 0) {
+    constructor() : this("", 0,0.toBigDecimal(), "") {
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
