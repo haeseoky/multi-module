@@ -1,5 +1,7 @@
 package com.multimodule.api.controller.simple
 
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.fasterxml.jackson.module.kotlin.readValue
 import com.multimodule.domain.model.Price
 import org.junit.jupiter.api.Test
 import org.springframework.test.context.ActiveProfiles
@@ -36,4 +38,21 @@ class SimpleTest {
         println( format.format(value.setScale(1, RoundingMode.HALF_UP)))
 
     }
+
+
+    @Test
+    fun jacksonModuleTest(){
+        val data = "{\"jobType\": \"RECEIVING_SYNC\"}"
+        val obj = jacksonObjectMapper().readValue<Read>(data)
+        println(obj)
+    }
+}
+
+data class Read(
+    val jobType: JobType,
+    val data: String = ""
+)
+
+enum class JobType {
+    RECEIVING_SYNC
 }
