@@ -43,8 +43,12 @@ class SimpleTest {
     @Test
     fun jacksonModuleTest(){
         val data = "{\"jobType\": \"RECEIVING_SYNC\"}"
-        val obj = jacksonObjectMapper().readValue<Read>(data)
-        println(obj)
+        val obj = jacksonObjectMapper().readValue<Map<String, String>>(data)
+        obj.entries.forEach {
+            println(it.key)
+            println(it.value)
+        }
+//        println(JobType.valueOf(obj.get("jobType").toString()))
     }
 }
 

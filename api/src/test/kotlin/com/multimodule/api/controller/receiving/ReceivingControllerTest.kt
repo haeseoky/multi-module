@@ -7,12 +7,18 @@ import com.multimodule.infrastructure.jpa.receiving.ReceivingJpaRepositoryInterf
 import com.multimodule.infrastructure.jpa.receiving.entity.ReceivingJpa
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
+import org.mockito.BDDMockito.given
+import org.mockito.Mock
 import org.springframework.boot.test.web.client.TestRestTemplate
 
 internal class ReceivingControllerTest(
     private val restTemplate: TestRestTemplate,
-    private val receivingJpaRepositoryInterface: ReceivingJpaRepositoryInterface
+    private val receivingJpaRepositoryInterface: ReceivingJpaRepositoryInterface,
+    private val receivingTestService: ReceivingTestService
 ) : AbstractSpringBootTest() {
+
+    @Mock
+    lateinit var receivingTestRepository: ReceivingTestRepository
 
     @Test
     fun list() {
@@ -47,5 +53,11 @@ internal class ReceivingControllerTest(
             Assertions.assertThat(it.get("payload").get("name").asText()).isEqualTo("test")
             Assertions.assertThat(it.get("payload").get("quantity").asInt()).isEqualTo(1)
         }
+    }
+
+    @Test
+    fun voidMethodTest(){
+        given(receivingTestRepository.test()).willReturn("haeseoky test run")
+        receivingTestService.test()
     }
 }
