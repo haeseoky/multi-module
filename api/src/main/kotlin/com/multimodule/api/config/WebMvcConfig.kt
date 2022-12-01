@@ -9,5 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 class WebMvcConfig : WebMvcConfigurer {
     override fun addInterceptors(registry: InterceptorRegistry) {
         registry.addInterceptor(TestInterceptor())
+            .addPathPatterns("/partner/*")
     }
 }
