@@ -1,7 +1,6 @@
 package com.multimodule.api.controller.mockito_kotlintest
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.mockito.ArgumentMatchers
@@ -66,7 +65,7 @@ internal class KotlinTest {
         println(mockedFloatList[3])
         println(mockedFloatList[3])
 
-        assertThat(mockedFloatList[1]).isEqualTo(1f)
+        assertThat(mockedFloatList[1]).isEqualTo(3F)
 
 
     }
