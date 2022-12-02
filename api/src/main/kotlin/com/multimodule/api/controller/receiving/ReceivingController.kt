@@ -6,12 +6,8 @@ import com.multimodule.application.receiving.ReceivingProvider
 import com.multimodule.application.receiving.ReceivingService
 import com.multimodule.domain.model.Price
 import com.multimodule.domain.model.Receiving
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
-import javax.validation.Valid
+import jakarta.validation.Valid
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/receiving")

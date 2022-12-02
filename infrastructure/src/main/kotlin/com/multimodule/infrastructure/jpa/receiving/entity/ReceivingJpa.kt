@@ -1,8 +1,8 @@
 package com.multimodule.infrastructure.jpa.receiving.entity
 
 import com.multimodule.infrastructure.jpa.common.BaseEntity
+import jakarta.persistence.*
 import java.math.BigDecimal
-import javax.persistence.*
 
 @Entity
 class ReceivingJpa(

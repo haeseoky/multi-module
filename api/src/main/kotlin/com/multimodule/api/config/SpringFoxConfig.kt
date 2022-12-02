@@ -3,6 +3,7 @@ package com.multimodule.api.config
 import com.fasterxml.classmate.TypeResolver
 import io.swagger.annotations.ApiModel
 import io.swagger.annotations.ApiModelProperty
+import jakarta.servlet.ServletContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.domain.Pageable
@@ -16,7 +17,6 @@ import springfox.documentation.spring.web.plugins.Docket
 import springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider
 import springfox.documentation.spring.web.readers.operation.HandlerMethodResolver
 import java.util.*
-import javax.servlet.ServletContext
 
 
 @Configuration
