@@ -1,8 +1,10 @@
 val springCloudVersion: String by project
 val springCloudAWSVersion: String by project
-val springFoxVersion: String by project
+//val springFoxVersion: String by project
+val springdocOpenapiUi: String by project
 val mockitoKotlinVersion: String by project
 val kotlinxCoroutinesCore: String by project
+
 
 dependencyManagement {
     imports {
@@ -18,7 +20,11 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("io.springfox:springfox-boot-starter:${springFoxVersion}")
+
+//    implementation("io.springfox:springfox-boot-starter:${springFoxVersion}")
+    implementation("org.springdoc:springdoc-openapi-kotlin:${springdocOpenapiUi}")
+
+
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 

@@ -6,15 +6,19 @@ import com.multimodule.application.receiving.ReceivingProvider
 import com.multimodule.application.receiving.ReceivingService
 import com.multimodule.domain.model.Price
 import com.multimodule.domain.model.Receiving
+import io.swagger.v3.oas.annotations.Operation
+import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.*
 
+@Tag(name = "Receiving", description = "Receiving API")
 @RestController
 @RequestMapping("/receiving")
 class ReceivingController(
     private val receivingProvider: ReceivingProvider,
     private val receivingService: ReceivingService,
 ) {
+    @Operation(summary = "Receiving 조회")
     @GetMapping("")
     fun list(): List<ReceivingResponse> {
         return receivingProvider.receiving().map {
@@ -27,6 +31,7 @@ class ReceivingController(
         }
     }
 
+    @Operation(summary = "Receiving 생성")
     @PostMapping("")
     fun create(
         @Valid @RequestBody receivingRequest: ReceivingRequest

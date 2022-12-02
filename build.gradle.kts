@@ -13,8 +13,9 @@ plugins {
 
 allprojects{
     repositories {
-        maven(url = "https://repo.smartfoodnet.com/repository/maven/")
+//        maven(url = "https://repo.smartfoodnet.com/repository/maven/")
         mavenCentral()
+        maven { url = uri("https://repo.spring.io/milestone") }
     }
 }
 

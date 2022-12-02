@@ -1,15 +1,17 @@
 package com.multimodule.api.controller.receiving.model
 
-import io.swagger.annotations.ApiModelProperty
+
+import io.swagger.v3.oas.annotations.media.Schema
 import java.math.BigDecimal
 
+@Schema(name = "ReceivingRequest", description = "Receiving Request")
 class ReceivingRequest(
-    @ApiModelProperty(value = "이름")
+    @Schema(description = "이름", example = "상품1")
     val name: String,
-    @ApiModelProperty(value = "수량")
+    @Schema(description = "수량")
     val quantity: Long,
-    @ApiModelProperty(value = "가격")
+    @Schema(description = "가격")
     val price: BigDecimal,
-    @ApiModelProperty(value = "통화")
+    @Schema(description = "통화")
     val currency: String,
 )
